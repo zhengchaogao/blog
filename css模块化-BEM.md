@@ -1,9 +1,52 @@
-#BEM介绍
+#CSS模块化
+*团队合作统一高于一切*
+
+浏览器原生支持css模块化, 但是使用不多：
+```css
+@import './base.css'
+@import './header.css'
+@import './content.css'
+@import './footer.css'
+```
+css import语法会有比较严重的性能问题，但不失为一种模块化的利器。
+1. 方便删除、添加模块；  
+2. 方便多人协作；  
+@import的文件是额外请求的，请求数太多，页面性能不佳，所以，最好的办法就是把模块打包。
+
+##SASS @import语句
+
+SASS预编译会将@import的.scss文件合并打包，有效避免css @import时候的性能问题
+```css
+@import './base.scss'
+@import './header.scss'
+@import './content.scss'
+@import './footer.scss'
+```
+当多个模块合并在一起时候，很容易出现选择器命名冲突。如：
+```css
+//打包后的main.css
+
+//来自./header.scss中定义的logo类
+.logo {
+	width: 50px;
+}
+.
+.
+.
+//来自./footer.scss中定义的logo类
+.logo {
+	width: 100px;
+}
+```
+需要一套命名规范来避免冲突。
+
+##BEM介绍
+BEM命名规范约定如下：
 
 **BEM 代表 block、element、modifier。**  
 1. block：一个对象（登录表单、导航菜单）；  
 2. element：一个块中特定功能的组件（登录按钮、菜单一个栏目）；  
-3. modifier：块或元素的不同变化（一个带隐藏的登录表单）； 
+3. modifier：块或元素的不同状态（一个带隐藏的登录表单）； 
 
 **常见的BEM格式像这样:**  
 ```css
@@ -14,29 +57,32 @@
 ```
 **SASS写BEM的原始写法：**
 ```css
-//correspondence 下有list、preview组件，以及full-size变种。
+.person {
 
-.correspondence {
-
-	&__list {
+	&__hand {
 	}
 
-	&__preview {
+	&--female {
  	}
 
- 	&--full-size{
+ 	&--female__hand{
  	}
 }
 ```
 
 ```css
 //编译为css
-.correspondence {
-  border: 1px; }
-  .correspondence__list {
-    border: 1px; }
-  .correspondence__preview {
-    border: 1px; }
-  .correspondence--full-size {
-    border: 1px; }
+.person {
+}
+.person__hand {
+}
+.person--female {
+}
+.person--female__hand {
+}
 ```
+
+**BEM中后代和id选择器的问题**
+1. id选择器基本上留给js；  
+2. 后代选择器在写block时候是不用的，一个Block下的所有Element无论相互层级如何,都要摊开扁平的属于Block；  
+3. 在block嵌套时候，会用后代选择器；  

@@ -7,11 +7,24 @@
 
 **常见的BEM格式像这样:**  
 ```css
-	.block {}  
-	.block__element {}  
-	.block--modifier {}  
-	.block_element--modifier {}
+.block {}  
+.block__element {}  
+.block--modifier {}  
+.block_element--modifier {}
 ```
-  
+**SASS写BEM的原始写法：**
+```css
+//correspondence 下有list、preview组件，以及full-size变种。
 
-1
+.correspondence {
+
+	&__list {
+	}
+
+	&__preview {
+ 	}
+
+ 	&--full-size{
+ 	}
+}
+```

@@ -8,12 +8,12 @@
 @import './content.css'
 @import './footer.css'
 ```
-css import语法会有比较严重的性能问题，但不失为一种模块化的利器。
+css import语法会有比较严重的性能问题，但不失为一种模块化的利器。  
 1. 方便删除、添加模块；  
 2. 方便多人协作；  
 @import的文件是额外请求的，请求数太多，页面性能不佳，所以，最好的办法就是把模块打包。
 
-##SASS @import语句
+###SASS @import语句
 
 SASS预编译会将@import的.scss文件合并打包，有效避免css @import时候的性能问题
 ```css
@@ -40,7 +40,7 @@ SASS预编译会将@import的.scss文件合并打包，有效避免css @import�
 ```
 需要一套命名规范来避免冲突。
 
-##BEM介绍
+###BEM介绍
 BEM命名规范约定如下：
 
 **BEM 代表 block、element、modifier。**  

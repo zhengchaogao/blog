@@ -6,8 +6,8 @@
 3. modifier：块或元素的不同变化（一个带隐藏的登录表单）；
 ---
 常见的BEM格式像这样:  
-	.block {}
-	.block__element {}
-	.block--modifier {}
-	.block_element--modifier {}
+	`.block {}`
+	`.block__element {}`
+	`.block--modifier {}`
+	`.block_element--modifier {}`
 ---

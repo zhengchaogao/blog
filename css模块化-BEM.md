@@ -28,3 +28,15 @@
  	}
 }
 ```
+
+```css
+//编译为css
+.correspondence {
+  border: 1px; }
+  .correspondence__list {
+    border: 1px; }
+  .correspondence__preview {
+    border: 1px; }
+  .correspondence--full-size {
+    border: 1px; }
+```

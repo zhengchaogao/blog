@@ -81,6 +81,11 @@ BEM命名规范约定如下：
 .person--female__hand {
 }
 ```
+**postcss 中 postcss-bem 插件：**
+postcss-bem 中设置 bem({style: 'bem'})。语法：  
+1. 生成block @component；  
+2. 生成element @descendent；  
+3. 生成modifier @modifier；  
 
 **BEM中的问题和误区**  
 

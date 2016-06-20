@@ -2,7 +2,7 @@
 *提高生产力*
 ###gulp-postcss
 postcss处理css爽歪歪，妈妈再也不用担心我不回用sass了。写法如下
-`
+```javascript
 var postcss = require('gulp-postcss');
 
 gulp.task('postcss', function() {
@@ -12,4 +12,4 @@ gulp.task('postcss', function() {
 		.pipe(postcss(processor))
 		.pipe(gulp.dest('./dest'))
 });
-`
+```

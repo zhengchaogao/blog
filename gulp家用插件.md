@@ -13,7 +13,7 @@ gulp.task('postcss', function() {
 		.pipe(gulp.dest('./dest'))
 });
 ```
-postcss常用插件：
+postcss常用插件：  
 1. autoprefixer 自动添加浏览器前缀；    
 2. postcss-import 合并@import css文件；  
 3. cssnano 压缩代码，优化的插件合集；    
@@ -22,3 +22,5 @@ postcss常用插件：
 6. precss-bem 默认SUIT风格，可以改成BEM命名风格；    
 
 *参考 http://www.w3cplus.com/blog/tags/516.html*   
+###babel系列
+babel提供了对新语法的解析，包括但不限于es6、es7、react。   

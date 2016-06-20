@@ -14,11 +14,11 @@ gulp.task('postcss', function() {
 });
 ```
 postcss常用插件：
-1. autoprefixer 自动添加浏览器前缀；  
-2. postcss-import 合并@import css文件；
-3. cssnano 压缩代码，优化的插件合集；  
-4. css-mqpacker 合并媒体查询@media； 
-5. precss 预处理插件合集, 支持像SASS，合并@import；
-6. precss-bem 默认SUIT风格，可以改成BEM命名风格；  
+1. autoprefixer 自动添加浏览器前缀；    
+2. postcss-import 合并@import css文件；  
+3. cssnano 压缩代码，优化的插件合集；    
+4. css-mqpacker 合并媒体查询@media；   
+5. precss 预处理插件合集, 支持像SASS，合并@import；  
+6. precss-bem 默认SUIT风格，可以改成BEM命名风格；    
 
 *参考 http://www.w3cplus.com/blog/tags/516.html*   

@@ -126,8 +126,6 @@ import headerStyle from 'header.css'
 ```
 ```html
 //实际html中
-import headerStyle from 'header.css'
-
 <h1 class="_3dpOqNNJl6oyjYpdDHCFD9">我是标题1</h1>
 ```
 webpack中css-loader已经实现。其实质是在css预处理阶段，将:local(.title)变成了一个哈希值。仅可以通过模块导入的方式来获取这个哈希值并应用到组件上（生成的类名是可以配置的）。现在css-loader可以通过添加module选项使得css默认定义的是local scoped的，希望共享的可以用:global()定义。

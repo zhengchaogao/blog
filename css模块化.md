@@ -97,5 +97,37 @@ id、后代选择器
 1. 一个Block下的所有Element无论相互层级如何,都要摊开扁平的属于Block；  
 2. BEM 最多只有 B+E+M 三级,不可能出现 B+E+E+..+E+M 超长class名,也要求E不能同名；  
   
-###react中的css module
-TODO
+###react中的css modules
+理想中的文件结构是这样的：
+```javascript
+-components
+	-header
+		-header.jsx
+		-header.css
+	-footer
+		-footer.jsx
+		-footer.css
+```
+js可以做模块化，但是css中变量依然在影响全局，BEM约定属于一种曲线救国的方法。   
+react + webpack 带来了一个全新的css模块化方法，local scoped css。让css代码支持本地声明：
+```css
+//header.css中
+:local(.title) {
+	font-size: 20px;
+}
+```
+在需要header.css的模块中引入：
+
+```javascript
+//header.jsx中
+import headerStyle from 'header.css'
+
+<h1 classNanme={headerStyle.title}>我是标题1</h1>
+```
+```html
+//实际html中
+import headerStyle from 'header.css'
+
+<h1 class="_3dpOqNNJl6oyjYpdDHCFD9">我是标题1</h1>
+```
+webpack中css-loader已经实现。其实质是在css预处理阶段，将:local(.title)变成了一个哈希值。仅可以通过模块导入的方式来获取这个哈希值并应用到组件上（生成的类名是可以配置的）。现在css-loader可以通过添加module选项使得css默认定义的是local scoped的，希望共享的可以用:global()定义。

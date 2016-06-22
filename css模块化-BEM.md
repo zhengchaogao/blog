@@ -53,7 +53,7 @@ BEM命名规范约定如下：
 .block {}  
 .block__element {}  
 .block--modifier {}  
-.block_element--modifier {}
+.block__element--modifier {}
 ```
 **SASS写BEM的原始写法：**
 ```css
@@ -96,8 +96,6 @@ id、后代选择器
 误区    
 1. 一个Block下的所有Element无论相互层级如何,都要摊开扁平的属于Block；  
 2. BEM 最多只有 B+E+M 三级,不可能出现 B+E+E+..+E+M 超长class名,也要求E不能同名；  
-
-###PostCSS
-TODO
+  
 ###react中的css module
 TODO
